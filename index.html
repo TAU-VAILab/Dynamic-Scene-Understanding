@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 
-    <meta property="og:title" content="NeuralSVG: An Implicit Representation for Text-to-Vector Generation"/>
+    <meta property="og:title" content="Dynamic Scene Understanding from Vision-Language Representations"/>
     <meta property="og:url" content=""/>
     <meta property="og:image" content="static/images/og_tag_header_image.jpg"/>
     <meta property="og:image:width" content="1200"/>
@@ -38,7 +38,7 @@
         <div class="container is-max-widescreen">
             <!-- <div class="columns is-centered"> -->
             <div class="column has-text-centered">
-                <h1 class="title is-1 publication-title">NeuralSVG: An Implicit Representation for Text-to-Vector Generation</h1>
+                <h1 class="title is-1 publication-title">Dynamic Scene Understanding from Vision-Language Representations</h1>
             </div>
         </div>
     </div>
@@ -53,18 +53,16 @@
                     </div>
 
                     <div class="is-size-5 publication-authors">
-                        <span class="author-block"><a href="https://sagipolaczek.github.io/" target="_blank">Sagi Polaczek</a><sup>1</sup>,</span>
-                        <span class="author-block"><a href="https://yuval-alaluf.github.io/" target="_blank">Yuval Alaluf</a><sup>1</sup>,</span>
-                        <span class="author-block"><a href="https://eladrich.github.io/" target="_blank">Elad Richardson</a><sup>1</sup>,</span>           
-                        <span class="author-block"><a href="https://yael-vinker.github.io/website/" target="_blank">Yael Vinker</a><sup>1,2</sup>,</span>           
-                        <span class="author-block"><a href="https://danielcohenor.com/" target="_blank">Daniel Cohen-Or</a><sup>1</sup></span>
+                        <span class="author-block"><a href="https://sagipolaczek.github.io/" target="_blank">Shahaf Pruss</a><sup>1</sup>,</span>
+                        <span class="author-block"><a href="https://yuval-alaluf.github.io/" target="_blank">Morris Alper</a><sup>1,2</sup>,</span>
+                        <span class="author-block"><a href="https://eladrich.github.io/" target="_blank">Hadar Averbuch-Elor</a><sup>1,2</sup>,</span>           
                     </div>
                                         
                     <div class="is-size-6 publication-authors">
                         <span class="author-block">1 - Tel Aviv University</span>
                     </div>
                     <div class="is-size-6 publication-authors">
-                        <span class="author-block">2 - MIT CSAIL</span>
+                        <span class="author-block">2 - Cornell University</span>
                     </div>
                                                     
                     <div class="column has-text-centered">
@@ -140,18 +138,12 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Vector graphics are essential in design, providing artists with a versatile medium for creating resolution-independent
-                             and highly editable visual content. Recent advancements in vision-language and diffusion models have fueled interest 
-                             in text-to-vector graphics generation. However, existing approaches often suffer from over-parameterized outputs or 
-                             treat the layered structure --- a core feature of vector graphics --- as a secondary goal, diminishing their practical 
-                             use. Recognizing the importance of layered SVG representations, we propose NeuralSVG, an implicit neural representation
-                              for generating vector graphics from text prompts. Inspired by Neural Radiance Fields (NeRFs), NeuralSVG encodes the 
-                              entire scene into the weights of a small MLP network, optimized using Score Distillation Sampling (SDS). To encourage 
-                              a layered structure in the generated SVG, we introduce a dropout-based regularization technique that strengthens the 
-                              standalone meaning of each shape. We additionally demonstrate that utilizing a neural representation provides an added 
-                              benefit of inference-time control, enabling users to dynamically adapt the generated SVG based on user-provided inputs, 
-                              all with a single learned representation. Through extensive qualitative and quantitative evaluations, we demonstrate that 
-                              NeuralSVG outperforms existing methods in generating structured and flexible SVG.
+                             Images depicting complex, dynamic scenes are challenging to parse automatically, requiring both high-level comprehension of the overall situation and fine-grained identification of participating entities and their interactions. Current approaches use distinct methods tailored to sub-tasks such as Situation Recognition and detection of Human-Human and Human-Object Interactions.
+                             However, recent advances in image understanding have often leveraged web-scale vision-language (V&L) representations to obviate task-specific engineering.
+                             In this work, we propose a framework for dynamic scene understanding tasks by leveraging knowledge from modern, frozen V&L representations.
+                             By framing these tasks in a generic manner - as predicting and parsing structured text, or by directly concatenating representations to the input of existing models - we achieve state-of-the-art results while using a minimal number of trainable parameters relative to existing approaches.
+                             Moreover, our analysis of dynamic knowledge of these representations shows that recent, more powerful representations effectively encode dynamic scene semantics, making this approach newly possible.
+                             We will release our data, code, and trained models.
                         </p>
                     </div>
                 </div>
