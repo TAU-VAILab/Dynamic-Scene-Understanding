@@ -108,9 +108,7 @@
                         <div class="column is-centered has-text-centered">
                             <img style="width:500px; height:auto;" src="static/teaser/teaser_04_11.jpg" alt="NeTI" />
                             <h2 class="subtitle">
-                                NeuralSVG generates vector graphics from text prompts with ordered and editable shapes. 
-                                Our method supports dynamic conditioning, such as background color, which facilitating the generation 
-                                of multiple color palettes for a single learned representation.
+                                Given an input image depicting a dynamic scene, our framework performs a variety of dynamic scene understanding tasks, such as human-object interactions, human-human and recognition of grounded situations, (A, B, C respectively above). Each of these predicts different entities and relations, possibly grounded in the input image (visualized as bounding boxes on the right). Our generic method contrasts with previous approaches tailored to a single such task.
                             </h2>
                         </div>
                     </div>
@@ -198,15 +196,7 @@
                         <img class="large-image" src="static/system/method_13_11.jpg" alt="method" />
                     </div>
                     <ul class="column is-centered has-text-justified">
-                      <li> We learn an implicit neural representation for generating vector graphics from text prompts. We encode the SVG into the weights of a small MLP network, optimized using an Score Distillation Sampling (SDS).
-                      </li>
-                      <br>
-                      <li> To promote an ordered representation, we use a dropout-based technique to encourages each learned shape to have a meaningful and ordered role in the overall scene.
-                      </li>
-                      <br>
-                      <li> Our neural representation enables inference-time control over the generated asset such as dynamically adjusting the color palette or aspect ratio of the generated SVG, all with a single learned representation.
-                      </li>
-                      <br>
+                      We propose a framework for using frozen multimodally- pretrained vision representations to perform dynamic scene understanding tasks. This consists of two complementary methods for overall scene understanding and grounded prediction respectively. We illustrate our framework for performing high-level (top) and grounded (bottom) tasks, exemplified by the tasks of SiR and GSR in the figure. For overall scene understanding tasks we add trainable weights to the VLM text decoder and fine-tune these using a standard token-wise language modeling objective to predict the desired labels as formatted text. For grounded prediction tasks we concatenate the V&L embeddings to the existing vision backbone embeddingsWe learn an implicit neural representation for generating vector graphics from text prompts. We encode the SVG into the weights of a small MLP network, optimized using an Score Distillation Sampling (SDS).
                     </ul>
                 </div>
             </div>
@@ -224,7 +214,7 @@
                     </div>
                     <h3 class="title is-4">Human-Human Interaction (HHI) – Interactive Visualization</h3>
                     <p class="content has-text-centered">
-                         We show results of our method together with various models discussed in the paper, showcasing 100 randomly selected samples in a random order from the Waldo & Wenda test set. For models supporting beam search, the top five beams are displayed, and while the images are downscaled for convenience, the results retain the quality of the original images. For externally hosted images, a URL is provided instead of displaying them directly.
+                         The task of understanding interactions between humans bears similarity to HOI detection, but has attracted separate attention and approaches due to the complex nature of HHI as de pending on social context, their often non-local nature, and connection to human body pose. For Interactive Visualization press the link below.
                     </p>
                         <a href="static/html1/viz.html">Human-Human Interaction (HHI)</a>
                 </div>
@@ -250,7 +240,7 @@
                   </div>
                   <h3 class="title is-4">Situation Recognition (SiR) – Interactive Visualization</h3>
                   <p class="content has-text-centered"> 
-                    We show results of our method and CoFormer on the imsitu testset, showcasing 100 randomly selected samples in a random order. For convenience, the images are stored in a local folder, and a link is provided to access them.
+                    The goal of SiR is to generate a structured summary of an image that captures the primary activity and the entities involved in specific roles, forming a semantic frame structure as defined in the field of linguistic semantics. In this formulation, the central activity being depicted corresponds to the chosen verb, whose arguments are nouns labelled by their task in this action.  For Interactive Visualization press the link below.
                   </p>
                   <a href="static/html2/viz.html">Situation Recognition (SiR)</a>
               </div>
@@ -272,7 +262,7 @@
                 </div>
                 <h3 class="title is-4">Grounded Situation Recognition (GSR) - Interactive Visualization</h3>
                 <p class="content has-text-centered">
-                    We show results of our method and CoFormer on the SWiG testset, showcasing 100 randomly selected samples in a random order. For convenience, all visual results (grounded images and their predictions) are stored in a local folder, with a link provided for access.
+                    GSR extends the SiR task by additionally expecting a bounding box prediction for each nominal argument, i.e. requiring a predicted location for each participant in the action. For Interactive Visualization press the link below.
                 </p>
                 <a href="static/html3/viz.html">Grounded Situation Recognition (GSR)</a>
             </div>
@@ -301,7 +291,7 @@
                 </div>
                 <h3 class="title is-4">Human-Object Interaction (HOI) – Interactive Visualization</h3>
                 <p class="content has-text-centered">
-                    We show results of our method and PViC on the HICO-DET testset, showcasing 100 randomly selected samples in a random order. For convenience, all visual results are stored in a local folder, with a link provided for access.
+                    The task of detecting human-object interactions involves localizing and classifying pairs of humans and objects interacting within an image. Interactions are typically represented as a triplet consisting of the object type, the specific interaction (action), and the corresponding bounding boxes for both the human and the associated object. For Interactive Visualization press the link below.
                 </p>
                 <a href="static/html4/viz.html">Human-Object Interaction (HOI)</a>
             </div>
